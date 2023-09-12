@@ -20,6 +20,7 @@
     </div>
     <script>
       let signinform = document.getElementById("signinform");
+      let users = JSON.parse(localStorage.getItem("users")) || [];
 
       signinform.addEventListener("submit", (e) => {
         e.preventDefault();

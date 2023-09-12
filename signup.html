@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Uthman Dantata - Sign Up</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-container">
+        <h2>Sign Up</h2>
+        <form id="signupform">
+          <input type="email" id="email" placeholder="email" required />
+          <input type="text" id="username" placeholder="Username" required />
+          <input type="password" id="password" placeholder="Password" required />
+
+          <button type="submit">Sign Up</button>
+        </form>
+        <p>Already have an account? <a href="signin.html">Login</a></p>
+      </div>
+    </div>
+    <script>
+      let signupForm = document.getElementById("signupform");
+      let users = [];
+
+      signupForm.addEventListener("submit", (e) => {
+        let email = document.getElementById("email").value;
+        let username = document.getElementById("username").value;
+        let password = document.getElementById("password").value;
+
+        let member = {
+          email: email,
+          username: username,
+          password: password,
+        };
+
+        users.push(member);
+        localStorage.setItem("users", JSON.stringify(users));
+
+        alert("Sign Up successful. You can now login.");
+      });
+    </script>
+  </body>
+</html>
